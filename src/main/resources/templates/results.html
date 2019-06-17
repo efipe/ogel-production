@@ -1,0 +1,48 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ogel Production</title>
+</head>
+
+<body>
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1></h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" style="">
+                <h1 class="" data-th-text="${machineName}"></h1>
+                <h1 class="">Net prod / last 24h</h1>
+                <h2 class="" data-th-text="${netprod}"></h2>
+                <h1 class="">Scrap vs. Gross Production Percentage:</h1>
+                <h2 class="" data-th-text="${scrapPercent + '%'}"></h2>
+                <h1 class="">Downtime percentage:</h1>
+                <h2 class="" data-th-text="${downTimePercent+ '%'}"></h2>
+                <h1 class="">Core temperature status:</h1>
+                <h2 class="" data-th-text="${coreStatus}"></h2>
+                <h1 class="">OEE (Overall Equipment Efficiency ):</h1>
+                <h2 class="" data-th-text="${oeeCalculated + '%'}"></h2>
+
+                <h1 class="">Production per hours:</h1>
+                <table>
+                    <tr th:each="catering, iter : ${productionMap}">
+                        <td scope="col" th:text="${catering.getKey()} + 'h'"></td>
+                        <td scope="row" th:text="${catering.getValue()}"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

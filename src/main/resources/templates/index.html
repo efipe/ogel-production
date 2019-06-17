@@ -1,0 +1,32 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ogel Production</title>
+</head>
+
+<body >
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1> Welcome To Ogel Production Monitoring Service </h1>
+                <h1 class="text-center">Please select the machine to report<br></h1>
+                <div class="col-md-4">
+                    <form th:action="@{'/results'}" method="get">
+                    <select name="machineName" required="true">
+                        <option value="4x2 Brick Mould">4x2 Brick Mould</option>
+                        <option value="3x2 Brick Mould">3x2 Brick Mould</option>
+                        <option value="2x2 Brick Mould">2x2 Brick Mould</option>
+                    </select>
+                    <div class="col-md-4"><button class="btn btn-primary" type="submit">Continue</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
